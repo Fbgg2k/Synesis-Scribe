@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { CheckCircle2, XCircle, Settings } from 'lucide-react';
+import DynamicLucideIcon from '@/components/shared/DynamicLucideIcon';
 
 interface IntegrationCardProps {
   integration: IntegrationSetting;
@@ -16,7 +17,7 @@ const IntegrationCard: React.FC<IntegrationCardProps> = ({ integration, showConf
       <CardHeader>
         <div className="flex items-center justify-between mb-2">
           <CardTitle className="font-headline text-lg font-medium flex items-center">
-            {integration.icon && <integration.icon className="mr-2 h-5 w-5 text-primary" />}
+            {integration.iconName && <DynamicLucideIcon name={integration.iconName} className="mr-2 h-5 w-5 text-primary" />}
             {integration.name}
           </CardTitle>
           <Badge variant={integration.configured ? 'default' : 'secondary'}>

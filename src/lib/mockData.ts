@@ -1,9 +1,9 @@
-import type { Channel, Conversation, Message, CalendarEvent, IntegrationSetting } from './types';
-import { MessageSquare, Send, CalendarDays, Database, BotMessageSquare, Workflow, Settings2, AudioWaveform, Cog } from 'lucide-react';
+import type { Channel, Conversation, Message, CalendarEvent, IntegrationSetting, IconName } from './types';
+// Removed direct LucideIcon imports as they are no longer stored directly in mockData
 
 export const mockChannels: Channel[] = [
-  { id: 'whatsapp', name: 'WhatsApp', type: 'WhatsApp', status: 'Connected', icon: MessageSquare, messageCount: 125 },
-  { id: 'telegram', name: 'Telegram', type: 'Telegram', status: 'Needs Setup', icon: Send, messageCount: 30 },
+  { id: 'whatsapp', name: 'WhatsApp', type: 'WhatsApp', status: 'Connected', iconName: 'MessageSquare', messageCount: 125 },
+  { id: 'telegram', name: 'Telegram', type: 'Telegram', status: 'Needs Setup', iconName: 'Send', messageCount: 30 },
 ];
 
 const mockMessages1: Message[] = [
@@ -36,7 +36,7 @@ export const mockIntegrationSettings: IntegrationSetting[] = [
     name: 'Supabase',
     description: 'Database for storing conversation history.',
     configured: true,
-    icon: Database,
+    iconName: 'Database',
     inputs: [
       { id: 'supabase_url', name: 'supabaseUrl', label: 'Supabase URL', type: 'text', placeholder: 'https://your-instance.supabase.co' },
       { id: 'supabase_key', name: 'supabaseKey', label: 'Supabase Key', type: 'password', placeholder: 'Your Supabase API Key' },
@@ -47,7 +47,7 @@ export const mockIntegrationSettings: IntegrationSetting[] = [
     name: 'ElevenLabs',
     description: 'API for generating voice responses.',
     configured: true,
-    icon: AudioWaveform,
+    iconName: 'AudioWaveform',
     inputs: [
       { id: 'elevenlabs_key', name: 'elevenlabsApiKey', label: 'ElevenLabs API Key', type: 'password', placeholder: 'Your ElevenLabs API Key' },
     ]
@@ -57,7 +57,7 @@ export const mockIntegrationSettings: IntegrationSetting[] = [
     name: 'Google Calendar',
     description: 'Integration for managing schedules.',
     configured: false,
-    icon: CalendarDays,
+    iconName: 'CalendarDays',
     inputs: [
       { id: 'gcal_client_id', name: 'googleClientId', label: 'Google Client ID', type: 'text', placeholder: 'Your Google Client ID' },
       { id: 'gcal_client_secret', name: 'googleClientSecret', label: 'Google Client Secret', type: 'password', placeholder: 'Your Google Client Secret' },
@@ -68,14 +68,14 @@ export const mockIntegrationSettings: IntegrationSetting[] = [
     name: 'N8N Workflows',
     description: 'Automation engine for message flows.',
     configured: true,
-    icon: Workflow,
+    iconName: 'Workflow',
   },
   {
     id: 'chatwoot',
     name: 'Chatwoot / WhatsApp',
     description: 'Primary channel for WhatsApp communication.',
     configured: true,
-    icon: MessageSquare,
+    iconName: 'MessageSquare',
      inputs: [
       { id: 'chatwoot_api_url', name: 'chatwootApiUrl', label: 'Chatwoot API URL', type: 'text', placeholder: 'https://chatwoot.example.com' },
       { id: 'chatwoot_token', name: 'chatwootToken', label: 'Chatwoot Token', type: 'password', placeholder: 'Your Chatwoot Token' },
@@ -86,7 +86,7 @@ export const mockIntegrationSettings: IntegrationSetting[] = [
     name: 'Telegram Bot',
     description: 'Integration for Telegram messaging.',
     configured: false,
-    icon: Send,
+    iconName: 'Send',
     inputs: [
       { id: 'telegram_bot_token', name: 'telegramBotToken', label: 'Telegram Bot Token', type: 'password', placeholder: 'Your Telegram Bot Token' },
       { id: 'telegram_chat_id', name: 'telegramChatId', label: 'Telegram Chat ID', type: 'text', placeholder: 'Your Telegram Chat ID' },
@@ -100,7 +100,7 @@ export const mockLLMSettings: IntegrationSetting[] = [
     name: 'LLM Configuration',
     description: 'Settings for the Large Language Model.',
     configured: true,
-    icon: BotMessageSquare,
+    iconName: 'BotMessageSquare',
     inputs: [
       { id: 'llm_api_key', name: 'llmApiKey', label: 'LLM API Key', type: 'password', placeholder: 'Your LLM API Key (e.g., OpenAI)' },
       { id: 'llm_model', name: 'llmModel', label: 'Model Name', type: 'text', placeholder: 'e.g., gpt-4, gemini-pro' },
@@ -114,9 +114,9 @@ export const mockGeneralSettings: IntegrationSetting[] = [
     name: 'Notifications',
     description: 'Configure how you receive notifications.',
     configured: true,
-    icon: Settings2, // Using Settings2 as a generic icon for this category
+    iconName: 'Settings2',
     inputs: [
-      { id: 'email_notifications', name: 'enableEmailNotifications', label: 'Enable Email Notifications', type: 'text', placeholder: 'true/false' }, // Assuming a simple text input for boolean for now
+      { id: 'email_notifications', name: 'enableEmailNotifications', label: 'Enable Email Notifications', type: 'text', placeholder: 'true/false' },
       { id: 'push_notifications', name: 'enablePushNotifications', label: 'Enable Push Notifications', type: 'text', placeholder: 'true/false' },
     ]
   },

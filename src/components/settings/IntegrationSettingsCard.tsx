@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { CheckCircle2, XCircle, Save } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useState, type FormEvent } from 'react';
+import DynamicLucideIcon from '@/components/shared/DynamicLucideIcon';
 
 interface IntegrationSettingsCardProps {
   integration: IntegrationSetting;
@@ -46,7 +47,7 @@ const IntegrationSettingsCard: React.FC<IntegrationSettingsCardProps> = ({ integ
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            {integration.icon && <integration.icon className="mr-3 h-6 w-6 text-primary" />}
+            {integration.iconName && <DynamicLucideIcon name={integration.iconName} className="mr-3 h-6 w-6 text-primary" />}
             <CardTitle className="font-headline text-xl font-medium">{integration.name}</CardTitle>
           </div>
           <Badge variant={isConfigured ? 'default' : 'secondary'}>

@@ -1,4 +1,7 @@
-import type { LucideIcon } from 'lucide-react';
+import type * as LucideIcons from 'lucide-react'; // Import as namespace for type extraction
+
+// Define a type for valid Lucide icon names
+export type IconName = keyof typeof LucideIcons;
 
 export interface Message {
   id: string;
@@ -24,7 +27,7 @@ export interface Channel {
   name: string;
   type: 'WhatsApp' | 'Telegram';
   status: 'Connected' | 'Disconnected' | 'Needs Setup';
-  icon: LucideIcon;
+  iconName: IconName; // Changed from icon: LucideIcon
   messageCount?: number;
 }
 
@@ -49,6 +52,6 @@ export interface IntegrationSetting {
   name: string;
   description: string;
   configured: boolean;
-  icon: LucideIcon;
+  iconName: IconName; // Changed from icon: LucideIcon
   inputs?: IntegrationSettingInput[];
 }
