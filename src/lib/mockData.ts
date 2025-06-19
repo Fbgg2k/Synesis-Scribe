@@ -1,5 +1,6 @@
+
 import type { Channel, Conversation, Message, CalendarEvent, IntegrationSetting, IconName } from './types';
-// Removed direct LucideIcon imports as they are no longer stored directly in mockData
+// No direct LucideIcon imports for data structures
 
 export const mockChannels: Channel[] = [
   { id: 'whatsapp', name: 'WhatsApp', type: 'WhatsApp', status: 'Connected', iconName: 'MessageSquare', messageCount: 125 },
@@ -68,14 +69,14 @@ export const mockIntegrationSettings: IntegrationSetting[] = [
     name: 'N8N Workflows',
     description: 'Automation engine for message flows.',
     configured: true,
-    iconName: 'Workflow',
+    iconName: 'Workflow', // String name
   },
   {
     id: 'chatwoot',
     name: 'Chatwoot / WhatsApp',
     description: 'Primary channel for WhatsApp communication.',
     configured: true,
-    iconName: 'MessageSquare',
+    iconName: 'MessageSquare', // String name
      inputs: [
       { id: 'chatwoot_api_url', name: 'chatwootApiUrl', label: 'Chatwoot API URL', type: 'text', placeholder: 'https://chatwoot.example.com' },
       { id: 'chatwoot_token', name: 'chatwootToken', label: 'Chatwoot Token', type: 'password', placeholder: 'Your Chatwoot Token' },
@@ -86,7 +87,7 @@ export const mockIntegrationSettings: IntegrationSetting[] = [
     name: 'Telegram Bot',
     description: 'Integration for Telegram messaging.',
     configured: false,
-    iconName: 'Send',
+    iconName: 'Send', // String name
     inputs: [
       { id: 'telegram_bot_token', name: 'telegramBotToken', label: 'Telegram Bot Token', type: 'password', placeholder: 'Your Telegram Bot Token' },
       { id: 'telegram_chat_id', name: 'telegramChatId', label: 'Telegram Chat ID', type: 'text', placeholder: 'Your Telegram Chat ID' },
@@ -100,7 +101,7 @@ export const mockLLMSettings: IntegrationSetting[] = [
     name: 'LLM Configuration',
     description: 'Settings for the Large Language Model.',
     configured: true,
-    iconName: 'BotMessageSquare',
+    iconName: 'BotMessageSquare', // String name
     inputs: [
       { id: 'llm_api_key', name: 'llmApiKey', label: 'LLM API Key', type: 'password', placeholder: 'Your LLM API Key (e.g., OpenAI)' },
       { id: 'llm_model', name: 'llmModel', label: 'Model Name', type: 'text', placeholder: 'e.g., gpt-4, gemini-pro' },
@@ -114,7 +115,7 @@ export const mockGeneralSettings: IntegrationSetting[] = [
     name: 'Notifications',
     description: 'Configure how you receive notifications.',
     configured: true,
-    iconName: 'Settings2',
+    iconName: 'Settings2', // String name
     inputs: [
       { id: 'email_notifications', name: 'enableEmailNotifications', label: 'Enable Email Notifications', type: 'text', placeholder: 'true/false' },
       { id: 'push_notifications', name: 'enablePushNotifications', label: 'Enable Push Notifications', type: 'text', placeholder: 'true/false' },
