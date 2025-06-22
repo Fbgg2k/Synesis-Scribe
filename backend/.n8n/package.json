@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@devlikeapro/n8n-nodes-chatwoot": "^1.0.2"
+  }
+}
